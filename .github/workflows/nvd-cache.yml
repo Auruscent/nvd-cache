@@ -33,7 +33,7 @@ jobs:
       - name: Create Archive with dependency tool and NVD data 
         run: |
           cd 
-          tar -czf /tmp/nvd.tar.gz ~/dependency-check/
+          tar -czf /tmp/nvd.tar.gz dependency-check nvd 
 
       - name: Create NVD Release
         uses: softprops/action-gh-release@v2
