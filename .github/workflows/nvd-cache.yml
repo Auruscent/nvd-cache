@@ -33,7 +33,7 @@ jobs:
       - name: Create NVD Archive
         run: |
           cd 
-          tar -czf nvd.tar.gz ./nvd
+          tar -czf /tmp/nvd.tar.gz ./nvd
 
       - name: Create NVD Release
         uses: softprops/action-gh-release@v2
@@ -41,4 +41,4 @@ jobs:
           token: ${{ github.token }}
           tag_name: nvd-latest
           prerelease: false
-          files: nvd.tar.gz
+          files: /tmp/nvd.tar.gz
