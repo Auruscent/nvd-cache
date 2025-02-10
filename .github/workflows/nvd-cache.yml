@@ -19,7 +19,7 @@ jobs:
       - name: Cache NVD data
         uses: actions/cache@v4
         with:
-          path: ~/nvd
+          path: nvd
           key: nvd
 
       - name: Setup dependency-check
@@ -28,10 +28,10 @@ jobs:
           unzip -q dependency-check.zip -d ~
 
       - name: Download NVD CVE with the API
-        run: ~/dependency-check/bin/dependency-check.sh dependency-check --nvdApiKey="$NVD_API_KEY" --updateonly --data ~/nvd
+        run: ~/dependency-check/bin/dependency-check.sh dependency-check --nvdApiKey="$NVD_API_KEY" --updateonly --data nvd
 
       - name: Create NVD Archive
-        run: tar -czf nvd.tar.gz ~/nvd
+        run: tar -czf nvd.tar.gz nvd
 
       - name: Create NVD Release
         uses: softprops/action-gh-release@v2
