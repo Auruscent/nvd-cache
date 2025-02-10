@@ -30,10 +30,10 @@ jobs:
       - name: Download NVD CVE with the API
         run: ~/dependency-check/bin/dependency-check.sh dependency-check --nvdApiKey="$NVD_API_KEY" --updateonly --data ~/nvd
 
-      - name: Create NVD Archive
+      - name: Create Archive with dependency tool and NVD data 
         run: |
           cd 
-          tar -czf /tmp/nvd.tar.gz ./nvd
+          tar -czf /tmp/nvd.tar.gz ~/dependency-check/
 
       - name: Create NVD Release
         uses: softprops/action-gh-release@v2
