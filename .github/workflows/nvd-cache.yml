@@ -24,7 +24,7 @@ jobs:
 
       - name: Setup dependency-check
         run: |
-          curl -sSL https://github.com/jeremylong/DependencyCheck/releases/download/v12.0.2/dependency-check-12.0.2-release.zip -o dependency-check.zip
+          curl -sSL https://github.com/jeremylong/DependencyCheck/releases/download/v12.1.0/dependency-check-12.1.0-release.zip -o dependency-check.zip
           unzip -q dependency-check.zip -d ~
 
       - name: Download NVD CVE with the API
